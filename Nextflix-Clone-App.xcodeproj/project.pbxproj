@@ -9,21 +9,41 @@
 /* Begin PBXBuildFile section */
 		6744F88A2932971000159804 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8892932971000159804 /* AppDelegate.swift */; };
 		6744F88C2932971000159804 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F88B2932971000159804 /* SceneDelegate.swift */; };
-		6744F88E2932971000159804 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F88D2932971000159804 /* ViewController.swift */; };
-		6744F8912932971000159804 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6744F88F2932971000159804 /* Main.storyboard */; };
+		6744F88E2932971000159804 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F88D2932971000159804 /* MainTabBarViewController.swift */; };
 		6744F8932932971100159804 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6744F8922932971100159804 /* Assets.xcassets */; };
 		6744F8962932971100159804 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6744F8942932971100159804 /* LaunchScreen.storyboard */; };
+		6744F89F2932AD9700159804 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F89E2932AD9700159804 /* HomeViewController.swift */; };
+		6744F8A12932ADBC00159804 /* UpcomingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8A02932ADBC00159804 /* UpcomingViewController.swift */; };
+		6744F8A32932ADC900159804 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8A22932ADC900159804 /* SearchViewController.swift */; };
+		6744F8A52932ADD900159804 /* DownloadsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8A42932ADD900159804 /* DownloadsViewController.swift */; };
+		6744F8AC29334D0600159804 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8AB29334D0600159804 /* CollectionViewTableViewCell.swift */; };
+		6744F8AE29336BCF00159804 /* HeaderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8AD29336BCF00159804 /* HeaderUIView.swift */; };
+		6744F8B02934BEFD00159804 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8AF2934BEFD00159804 /* APICaller.swift */; };
+		6744F8B22934D04400159804 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8B12934D04400159804 /* Title.swift */; };
+		6744F8B42934E99B00159804 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8B32934E99B00159804 /* Extensions.swift */; };
+		6744F8B82934F84300159804 /* TitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8B72934F84300159804 /* TitleCollectionViewCell.swift */; };
+		6744F8BB2934FC3300159804 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 6744F8BA2934FC3300159804 /* SDWebImage */; };
+		6744F8BD2934FC3300159804 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6744F8BC2934FC3300159804 /* SDWebImageMapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6744F8862932971000159804 /* Nextflix-Clone-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nextflix-Clone-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6744F8892932971000159804 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6744F88B2932971000159804 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6744F88D2932971000159804 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		6744F8902932971000159804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6744F88D2932971000159804 /* MainTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarViewController.swift; sourceTree = "<group>"; };
 		6744F8922932971100159804 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6744F8952932971100159804 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6744F8972932971100159804 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6744F89E2932AD9700159804 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6744F8A02932ADBC00159804 /* UpcomingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingViewController.swift; sourceTree = "<group>"; };
+		6744F8A22932ADC900159804 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		6744F8A42932ADD900159804 /* DownloadsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadsViewController.swift; sourceTree = "<group>"; };
+		6744F8AB29334D0600159804 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
+		6744F8AD29336BCF00159804 /* HeaderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUIView.swift; sourceTree = "<group>"; };
+		6744F8AF2934BEFD00159804 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		6744F8B12934D04400159804 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
+		6744F8B32934E99B00159804 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6744F8B72934F84300159804 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +51,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6744F8BD2934FC3300159804 /* SDWebImageMapKit in Frameworks */,
+				6744F8BB2934FC3300159804 /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +78,72 @@
 		6744F8882932971000159804 /* Nextflix-Clone-App */ = {
 			isa = PBXGroup;
 			children = (
+				6744F8AA29334CCF00159804 /* Managers */,
+				6744F8A929334CCC00159804 /* Resources */,
+				6744F8A829334CB300159804 /* Views */,
+				6744F8A729334CAE00159804 /* ViewModels */,
+				6744F8A629334CAC00159804 /* Models */,
+				6744F89D2932AD5B00159804 /* Controllers */,
+				6744F88D2932971000159804 /* MainTabBarViewController.swift */,
 				6744F8892932971000159804 /* AppDelegate.swift */,
 				6744F88B2932971000159804 /* SceneDelegate.swift */,
-				6744F88D2932971000159804 /* ViewController.swift */,
-				6744F88F2932971000159804 /* Main.storyboard */,
 				6744F8922932971100159804 /* Assets.xcassets */,
 				6744F8942932971100159804 /* LaunchScreen.storyboard */,
 				6744F8972932971100159804 /* Info.plist */,
 			);
 			path = "Nextflix-Clone-App";
+			sourceTree = "<group>";
+		};
+		6744F89D2932AD5B00159804 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6744F89E2932AD9700159804 /* HomeViewController.swift */,
+				6744F8A02932ADBC00159804 /* UpcomingViewController.swift */,
+				6744F8A22932ADC900159804 /* SearchViewController.swift */,
+				6744F8A42932ADD900159804 /* DownloadsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6744F8A629334CAC00159804 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6744F8B12934D04400159804 /* Title.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6744F8A729334CAE00159804 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		6744F8A829334CB300159804 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6744F8AB29334D0600159804 /* CollectionViewTableViewCell.swift */,
+				6744F8AD29336BCF00159804 /* HeaderUIView.swift */,
+				6744F8B72934F84300159804 /* TitleCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		6744F8A929334CCC00159804 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6744F8B32934E99B00159804 /* Extensions.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6744F8AA29334CCF00159804 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				6744F8AF2934BEFD00159804 /* APICaller.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +162,10 @@
 			dependencies = (
 			);
 			name = "Nextflix-Clone-App";
+			packageProductDependencies = (
+				6744F8BA2934FC3300159804 /* SDWebImage */,
+				6744F8BC2934FC3300159804 /* SDWebImageMapKit */,
+			);
 			productName = "Nextflix-Clone-App";
 			productReference = 6744F8862932971000159804 /* Nextflix-Clone-App.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +194,9 @@
 				Base,
 			);
 			mainGroup = 6744F87D2932971000159804;
+			packageReferences = (
+				6744F8B92934FC3300159804 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 6744F8872932971000159804 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -127,7 +213,6 @@
 			files = (
 				6744F8962932971100159804 /* LaunchScreen.storyboard in Resources */,
 				6744F8932932971100159804 /* Assets.xcassets in Resources */,
-				6744F8912932971000159804 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +223,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6744F88E2932971000159804 /* ViewController.swift in Sources */,
+				6744F8A32932ADC900159804 /* SearchViewController.swift in Sources */,
+				6744F8B82934F84300159804 /* TitleCollectionViewCell.swift in Sources */,
+				6744F88E2932971000159804 /* MainTabBarViewController.swift in Sources */,
+				6744F8AC29334D0600159804 /* CollectionViewTableViewCell.swift in Sources */,
+				6744F8B02934BEFD00159804 /* APICaller.swift in Sources */,
+				6744F8AE29336BCF00159804 /* HeaderUIView.swift in Sources */,
+				6744F8A52932ADD900159804 /* DownloadsViewController.swift in Sources */,
 				6744F88A2932971000159804 /* AppDelegate.swift in Sources */,
+				6744F8B42934E99B00159804 /* Extensions.swift in Sources */,
 				6744F88C2932971000159804 /* SceneDelegate.swift in Sources */,
+				6744F8A12932ADBC00159804 /* UpcomingViewController.swift in Sources */,
+				6744F8B22934D04400159804 /* Title.swift in Sources */,
+				6744F89F2932AD9700159804 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6744F88F2932971000159804 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6744F8902932971000159804 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6744F8942932971100159804 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,9 +379,8 @@
 				INFOPLIST_FILE = "Nextflix-Clone-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -320,9 +406,8 @@
 				INFOPLIST_FILE = "Nextflix-Clone-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +443,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6744F8B92934FC3300159804 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6744F8BA2934FC3300159804 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6744F8B92934FC3300159804 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		6744F8BC2934FC3300159804 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6744F8B92934FC3300159804 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6744F87E2932971000159804 /* Project object */;
 }
