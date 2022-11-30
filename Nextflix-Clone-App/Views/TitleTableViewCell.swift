@@ -33,6 +33,10 @@ class TitleTableViewCell: UITableViewCell {
         
         label.translatesAutoresizingMaskIntoConstraints = false
         
+        label.lineBreakMode = NSLineBreakMode.byWordWrapping
+        
+        label.numberOfLines = 0
+        
         return label
         
     }()
@@ -42,6 +46,8 @@ class TitleTableViewCell: UITableViewCell {
         let imageView = UIImageView()
         
         imageView.contentMode = .scaleAspectFill
+        
+        imageView.clipsToBounds = true
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -77,7 +83,8 @@ class TitleTableViewCell: UITableViewCell {
         let titleLabelConstraints = [
         
             titleLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-            titleLabel.leadingAnchor.constraint(equalTo: titleImageView.trailingAnchor, constant: 20)
+            titleLabel.leadingAnchor.constraint(equalTo: titleImageView.trailingAnchor, constant: 20),
+            titleLabel.widthAnchor.constraint(equalToConstant: 200)
         
         ]
         

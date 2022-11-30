@@ -11,7 +11,7 @@ class UpcomingViewController: UIViewController {
     
     private var titles: [Title] = [Title]()
     
-    private let upcomingTable: UITableView = {
+    private let upcomingTableView: UITableView = {
        
         let tableView = UITableView()
         
@@ -25,11 +25,11 @@ class UpcomingViewController: UIViewController {
         
         super.viewDidLoad()
         
-        view.addSubview(upcomingTable)
+        view.addSubview(upcomingTableView)
         
-        upcomingTable.dataSource = self
+        upcomingTableView.dataSource = self
         
-        upcomingTable.delegate = self
+        upcomingTableView.delegate = self
 
         view.backgroundColor = .systemBackground
         
@@ -62,7 +62,9 @@ extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
         
         // Configure function sets the image and text
         
-        cell.configure(with: TitleViewModel(titleName: title.original_name ?? title.original_title ?? "Unknown", posterURL: title.poster_path ?? ""))
+        let model = TitleViewModel(titleName: title.original_name ?? title.original_title ?? "Unknown", posterURL: title.poster_path ?? "")
+        
+        cell.configure(with: model)
          
         return cell
         
@@ -72,7 +74,7 @@ extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
         
         super.viewDidLayoutSubviews()
         
-        upcomingTable.frame = view.bounds
+        upcomingTableView.frame = view.bounds
         
     }
     
@@ -90,7 +92,7 @@ extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 DispatchQueue.main.async {
                     
-                    self?.upcomingTable.reloadData()
+                    self?.upcomingTableView.reloadData()
                     
                 }
                 
