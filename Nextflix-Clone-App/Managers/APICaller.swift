@@ -4,6 +4,9 @@
 //
 //  Created by Tomi Antoljak on 11/28/22.
 //
+/*
+ Result<[Title], Error> ---> means return array of titles if successful. Otherwise, return error. That's why we write completion(.success(result.results)) or completion(.failure(APIError.failedToGetData)) and it becomes esentially the same thing as return results or return error. Just a sintax thing.
+ */
 
 import Foundation
 

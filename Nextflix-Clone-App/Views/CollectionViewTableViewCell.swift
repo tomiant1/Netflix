@@ -90,6 +90,8 @@ extension CollectionViewTableViewCell: UICollectionViewDelegate, UICollectionVie
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell else { return UICollectionViewCell() }
         
+        // Keys of the dictionary are accessed via .key like here .poster_path is
+        
         guard let model = titles[indexPath.row].poster_path else { return UICollectionViewCell() }
         
         cell.configure(with: model)

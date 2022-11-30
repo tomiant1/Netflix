@@ -105,8 +105,6 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         }
         
-        
-        
         switch indexPath.section {
             
         case Sections.TrendingTV.rawValue:
