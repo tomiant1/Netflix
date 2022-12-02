@@ -18,7 +18,6 @@ struct Title: Codable {
     let id: Int
     let vote_count: Int
     let vote_average: Double
-    
     let media_type: String?
     let original_name: String?
     let original_title: String?

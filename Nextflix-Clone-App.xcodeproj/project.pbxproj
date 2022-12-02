@@ -26,6 +26,12 @@
 		6744F8BD2934FC3300159804 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6744F8BC2934FC3300159804 /* SDWebImageMapKit */; };
 		6744F8BF2936817000159804 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8BE2936817000159804 /* TitleTableViewCell.swift */; };
 		6744F8C1293693E200159804 /* TitleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8C0293693E200159804 /* TitleViewModel.swift */; };
+		6744F8C32937707200159804 /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8C22937707200159804 /* SearchResultsViewController.swift */; };
+		6744F8C72937B68600159804 /* YoutubeSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8C62937B68600159804 /* YoutubeSearchResponse.swift */; };
+		6744F8C92937C6BF00159804 /* TitlePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8C82937C6BF00159804 /* TitlePreviewViewController.swift */; };
+		6744F8CB2937CAC600159804 /* TitlePreviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6744F8CA2937CAC600159804 /* TitlePreviewViewModel.swift */; };
+		67F42BB2293A20E100BF91A4 /* NetflixCloneModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 67F42BB0293A20E100BF91A4 /* NetflixCloneModel.xcdatamodeld */; };
+		67F42BB4293A23E700BF91A4 /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67F42BB3293A23E700BF91A4 /* DataPersistenceManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +54,12 @@
 		6744F8B72934F84300159804 /* TitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		6744F8BE2936817000159804 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
 		6744F8C0293693E200159804 /* TitleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewModel.swift; sourceTree = "<group>"; };
+		6744F8C22937707200159804 /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		6744F8C62937B68600159804 /* YoutubeSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeSearchResponse.swift; sourceTree = "<group>"; };
+		6744F8C82937C6BF00159804 /* TitlePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewController.swift; sourceTree = "<group>"; };
+		6744F8CA2937CAC600159804 /* TitlePreviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitlePreviewViewModel.swift; sourceTree = "<group>"; };
+		67F42BB1293A20E100BF91A4 /* NetflixCloneModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NetflixCloneModel.xcdatamodel; sourceTree = "<group>"; };
+		67F42BB3293A23E700BF91A4 /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +78,7 @@
 		6744F87D2932971000159804 = {
 			isa = PBXGroup;
 			children = (
+				67F42BB0293A20E100BF91A4 /* NetflixCloneModel.xcdatamodeld */,
 				6744F8882932971000159804 /* Nextflix-Clone-App */,
 				6744F8872932971000159804 /* Products */,
 			);
@@ -88,7 +101,6 @@
 				6744F8A729334CAE00159804 /* ViewModels */,
 				6744F8A629334CAC00159804 /* Models */,
 				6744F89D2932AD5B00159804 /* Controllers */,
-				6744F88D2932971000159804 /* MainTabBarViewController.swift */,
 				6744F8892932971000159804 /* AppDelegate.swift */,
 				6744F88B2932971000159804 /* SceneDelegate.swift */,
 				6744F8922932971100159804 /* Assets.xcassets */,
@@ -101,10 +113,8 @@
 		6744F89D2932AD5B00159804 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6744F89E2932AD9700159804 /* HomeViewController.swift */,
-				6744F8A02932ADBC00159804 /* UpcomingViewController.swift */,
-				6744F8A22932ADC900159804 /* SearchViewController.swift */,
-				6744F8A42932ADD900159804 /* DownloadsViewController.swift */,
+				6744F8C52937710F00159804 /* Other */,
+				6744F8C42937710C00159804 /* Core */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -113,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				6744F8B12934D04400159804 /* Title.swift */,
+				6744F8C62937B68600159804 /* YoutubeSearchResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -121,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				6744F8C0293693E200159804 /* TitleViewModel.swift */,
+				6744F8CA2937CAC600159804 /* TitlePreviewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -148,8 +160,30 @@
 			isa = PBXGroup;
 			children = (
 				6744F8AF2934BEFD00159804 /* APICaller.swift */,
+				67F42BB3293A23E700BF91A4 /* DataPersistenceManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		6744F8C42937710C00159804 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6744F88D2932971000159804 /* MainTabBarViewController.swift */,
+				6744F89E2932AD9700159804 /* HomeViewController.swift */,
+				6744F8A02932ADBC00159804 /* UpcomingViewController.swift */,
+				6744F8A22932ADC900159804 /* SearchViewController.swift */,
+				6744F8A42932ADD900159804 /* DownloadsViewController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		6744F8C52937710F00159804 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				6744F8C22937707200159804 /* SearchResultsViewController.swift */,
+				6744F8C82937C6BF00159804 /* TitlePreviewViewController.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,15 +266,21 @@
 				6744F8BF2936817000159804 /* TitleTableViewCell.swift in Sources */,
 				6744F8A32932ADC900159804 /* SearchViewController.swift in Sources */,
 				6744F8B82934F84300159804 /* TitleCollectionViewCell.swift in Sources */,
+				67F42BB4293A23E700BF91A4 /* DataPersistenceManager.swift in Sources */,
 				6744F88E2932971000159804 /* MainTabBarViewController.swift in Sources */,
 				6744F8AC29334D0600159804 /* CollectionViewTableViewCell.swift in Sources */,
 				6744F8B02934BEFD00159804 /* APICaller.swift in Sources */,
+				67F42BB2293A20E100BF91A4 /* NetflixCloneModel.xcdatamodeld in Sources */,
 				6744F8AE29336BCF00159804 /* HeaderUIView.swift in Sources */,
 				6744F8A52932ADD900159804 /* DownloadsViewController.swift in Sources */,
 				6744F88A2932971000159804 /* AppDelegate.swift in Sources */,
+				6744F8C32937707200159804 /* SearchResultsViewController.swift in Sources */,
 				6744F8B42934E99B00159804 /* Extensions.swift in Sources */,
+				6744F8C72937B68600159804 /* YoutubeSearchResponse.swift in Sources */,
 				6744F88C2932971000159804 /* SceneDelegate.swift in Sources */,
+				6744F8CB2937CAC600159804 /* TitlePreviewViewModel.swift in Sources */,
 				6744F8A12932ADBC00159804 /* UpcomingViewController.swift in Sources */,
+				6744F8C92937C6BF00159804 /* TitlePreviewViewController.swift in Sources */,
 				6744F8B22934D04400159804 /* Title.swift in Sources */,
 				6744F89F2932AD9700159804 /* HomeViewController.swift in Sources */,
 				6744F8C1293693E200159804 /* TitleViewModel.swift in Sources */,
@@ -475,6 +515,19 @@
 			productName = SDWebImageMapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		67F42BB0293A20E100BF91A4 /* NetflixCloneModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				67F42BB1293A20E100BF91A4 /* NetflixCloneModel.xcdatamodel */,
+			);
+			currentVersion = 67F42BB1293A20E100BF91A4 /* NetflixCloneModel.xcdatamodel */;
+			path = NetflixCloneModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6744F87E2932971000159804 /* Project object */;
 }

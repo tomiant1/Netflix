@@ -19,6 +19,10 @@ enum Sections: Int {
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    private var randomTrendingMovie: Title?
+    
+    private var headerView: HeaderUIView?
+    
     let sectionTitles = ["Trending Movies", "Popular", "Trending TV", "Upcoming Movies", "Top Rated"]
     
     private let homeTableView: UITableView = {
@@ -43,14 +47,43 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         homeTableView.dataSource = self
         
-        let headerView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+        headerView = HeaderUIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
         
         homeTableView.tableHeaderView = headerView
         
         view.addSubview(homeTableView)
         
         configureNavbar()
+        
+        configureHeaderView()
+                        
+    }
+    
+    private func configureHeaderView() {
+        
+        APICaller.shared.getTrendingMovies { [weak self] result in
+            
+            switch result {
                 
+            case .success(let titles):
+                
+                let selectedTitle = titles.randomElement()
+                
+                self?.randomTrendingMovie = selectedTitle
+                
+                let titleViewModel = TitleViewModel(titleName: selectedTitle?.original_title ?? "", posterURL: selectedTitle?.poster_path ?? "")
+                
+                self?.headerView?.configure(with: titleViewModel)
+                
+            case .failure(let error):
+                
+                print(error)
+                
+            }
+            
+        }
+        
+        
     }
     
     private func configureNavbar() {
@@ -104,6 +137,10 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             return UITableViewCell()
             
         }
+        
+        // Each cell has a delegate through which it presents TitlePreviewViewController -- based on which movie title you pressed
+        
+        cell.delegate = self
         
         switch indexPath.section {
             
@@ -251,4 +288,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
 
+}
+
+extension HomeViewController: CollectionViewTableViewCellDelegate {
+    
+    func collectionViewTableViewCellDidTapCell(_ cell: CollectionViewTableViewCell, viewModel: TitlePreviewViewModel) {
+        
+        DispatchQueue.main.async { [weak self] in
+            
+            let resultViewController = TitlePreviewViewController()
+            
+            resultViewController.configure(with: viewModel)
+            
+            self?.navigationController?.pushViewController(resultViewController, animated: true)
+            
+        }
+        
+    }
+    
 }

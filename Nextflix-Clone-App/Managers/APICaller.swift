@@ -16,6 +16,10 @@ struct Constants {
     
     static let baseURL = "https://api.themoviedb.org"
     
+    static let Youtube_API_KEY = "AIzaSyD6ZBV5DdeB2lfclsW7TUGhJi9DmtrqaNU"
+    
+    static let baseYoutubeURL = "https://youtube.googleapis.com/youtube/v3/search?"
+    
 }
 
 enum APIError: Error {
@@ -175,6 +179,65 @@ class APICaller {
                 let result = try JSONDecoder().decode(Response.self, from: data)
                 
                 completion(.success(result.results))
+
+            } catch {
+                
+                completion(.failure(APIError.failedToGetData))
+                
+            }
+            
+        }
+        
+        task.resume()
+        
+    }
+    
+    func searchMovies(with query: String, completion: @escaping (Result<[Title], Error>) -> Void ) {
+        
+        // Special characters are converted by a browser into a format that can be processed. Example: '*' might be encoded into '%20'
+        // We use .addingPercentEncoding so that if our String input inside the url has special characters which are unreadable by the host, those chars can then be converted into readable ones.
+        
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
+        
+        guard let url = URL(string: "\(Constants.baseURL)/3/search/movie?api_key=\(Constants.API_KEY)&query=\(query)") else { return }
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            
+            guard let data = data, error == nil else { return }
+            
+            do {
+                
+                let result = try JSONDecoder().decode(Response.self, from: data)
+                
+                completion(.success(result.results))
+
+            } catch {
+                
+                completion(.failure(APIError.failedToGetData))
+                
+            }
+            
+        }
+        
+        task.resume()
+        
+    }
+    
+    func getMovie(with query: String, completion: @escaping (Result<VideoElement, Error>) -> Void) {
+        
+        guard let query = query.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
+        
+        guard let url = URL(string: "\(Constants.baseYoutubeURL)q=\(query)&key=\(Constants.Youtube_API_KEY )") else { return }
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, _, error in
+            
+            guard let data = data, error == nil else { return }
+            
+            do {
+                
+                let result = try JSONDecoder().decode(YoutubeSearchResponse.self, from: data)
+                
+                completion(.success(result.items[0]))
 
             } catch {
                 

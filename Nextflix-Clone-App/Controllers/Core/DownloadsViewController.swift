@@ -1,5 +1,5 @@
 //
-//  SearchViewController.swift
+//  DownloadsViewController.swift
 //  Nextflix-Clone-App
 //
 //  Created by Tomi Antoljak on 11/26/22.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class SearchViewController: UIViewController {
-
-    private var titles: [Title] = [Title]()
+class DownloadsViewController: UIViewController {
     
-    private let discoverTableView: UITableView = {
-       
+    private var titleItems: [TitleItem] = [TitleItem]()
+    
+    private let downloadTableView: UITableView = {
+        
         let tableView = UITableView()
         
         tableView.register(TitleTableViewCell.self, forCellReuseIdentifier: TitleTableViewCell.identifier)
@@ -25,37 +25,45 @@ class SearchViewController: UIViewController {
         
         super.viewDidLoad()
         
-        title = "Search"
+        view.backgroundColor = .systemBackground
         
-        discoverTableView.delegate = self
-        
-        discoverTableView.dataSource = self
+        title = "Downloads"
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
         navigationController?.navigationItem.largeTitleDisplayMode = .always
-
-        view.backgroundColor = .systemBackground
         
-        view.addSubview(discoverTableView)
+        view.addSubview(downloadTableView)
         
-        fetchDiscoverMovies()
+        downloadTableView.delegate = self
+        
+        downloadTableView.dataSource = self
+        
+        fetchFromLocalStorage()
         
     }
     
-    private func fetchDiscoverMovies() {
+    override func viewDidLayoutSubviews() {
         
-        APICaller.shared.getDiscoverMovies { [weak self] result in
+        super.viewDidLayoutSubviews()
+        
+        downloadTableView.frame = view.bounds
+        
+    }
+    
+    public func fetchFromLocalStorage() {
+        
+        DataPersistenceManager.shared.fetchingData { [weak self] result in
             
             switch result {
                 
-            case .success(let titles):
+            case .success(let titleItems):
                 
-                self?.titles = titles
+                self?.titleItems = titleItems
                 
                 DispatchQueue.main.async {
                     
-                    self?.discoverTableView.reloadData()
+                    self?.downloadTableView.reloadData()
                     
                 }
                 
@@ -65,34 +73,26 @@ class SearchViewController: UIViewController {
                 
             }
             
-            
         }
         
     }
     
-    override func viewDidLayoutSubviews() {
-        
-        super.viewDidLayoutSubviews()
-        
-        discoverTableView.frame = view.bounds
-        
-    }
-
 }
 
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+extension DownloadsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return titles.count
+        return titleItems.count
         
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: TitleTableViewCell.identifier, for: indexPath) as? TitleTableViewCell else { return UITableViewCell() }
         
-        let title = titles[indexPath.row]
+        let title = titleItems[indexPath.row]
         
         // Configure function sets the image and text
         
@@ -106,7 +106,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 140
+        return 150
         
     }
     
