@@ -110,4 +110,8 @@ extension DownloadsViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        <#code#>
+    }
+    
 }
