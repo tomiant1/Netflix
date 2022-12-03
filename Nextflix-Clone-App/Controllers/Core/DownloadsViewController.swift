@@ -41,6 +41,12 @@ class DownloadsViewController: UIViewController {
         
         fetchFromLocalStorage()
         
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("Downloaded"), object: nil, queue: nil) { _ in
+            
+            self.fetchFromLocalStorage()
+            
+        }
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -110,8 +116,84 @@ extension DownloadsViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
-        <#code#>
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        return true
+        
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        tableView.beginUpdates()
+        
+        switch editingStyle {
+            
+        case .delete:
+            
+            DataPersistenceManager.shared.deleteTitle(with: titleItems[indexPath.row]) { [weak self] result in
+                
+                switch result {
+                    
+                case .success():
+                    
+                    print("Deleted from database")
+                    
+                case .failure(let error):
+                    
+                    print(error)
+                    
+                }
+                
+                self?.titleItems.remove(at: indexPath.row)
+                
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                
+                tableView.endUpdates()
+                
+            }
+            
+        default:
+            
+            break
+            
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let title = titleItems[indexPath.row]
+        
+        guard let titleName = title.original_title ?? title.original_name else { return }
+        
+        APICaller.shared.getMovie(with: titleName) { [weak self] result in
+            
+            switch result {
+                
+            case .success(let videoElement):
+                
+                DispatchQueue.main.async {
+                    
+                    let vc = TitlePreviewViewController()
+                    
+                    let titlePreviewModel = TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? "")
+                    
+                    vc.configure(with: titlePreviewModel)
+                    
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                    
+                }
+                
+            case .failure(let error):
+                
+                print(error)
+                
+            }
+            
+        }
+        
     }
     
 }
