@@ -67,6 +67,44 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
         
     }
     
+    private func downloadTitleAt(indexPath: IndexPath) {
+        
+        DataPersistenceManager.shared.downloadTitle(with: titles[indexPath.row]) { result in
+            
+            switch result {
+                
+            case .success():
+                
+                NotificationCenter.default.post(name: NSNotification.Name("Downloaded"), object: nil)
+                
+            case .failure(let error):
+                
+                print(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemsAt indexPaths: [IndexPath], point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [weak self] _ in
+            
+            let downloadAction = UIAction(title: "Download", image: nil, identifier: nil, discoverabilityTitle: nil, state: .off) { _ in
+                
+                self?.downloadTitleAt(indexPath: indexPaths[0])
+                
+            }
+            
+            return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [downloadAction])
+            
+        }
+        
+        return config
+        
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TitleCollectionViewCell.identifier, for: indexPath) as? TitleCollectionViewCell else { return UICollectionViewCell() }
@@ -95,7 +133,7 @@ extension SearchResultsViewController: UICollectionViewDelegate, UICollectionVie
                 
             case .success(let videoElement):
                 
-                self?.delegate?.searchResultsViewControllerDidTapItem(TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: titleOverview))
+                self?.delegate?.searchResultsViewControllerDidTapItem(TitlePreviewViewModel(titleName: titleName, youtubeView: videoElement, titleOverview: titleOverview))
                 
             case .failure(let error):
                 

@@ -15,7 +15,9 @@ class HeaderUIView: UIView {
         
         button.setTitle("Play", for: .normal)
         
-        button.layer.borderColor = UIColor.white.cgColor
+        button.setTitleColor(UIColor.label, for: .normal)
+        
+        button.layer.borderColor = UIColor.label.cgColor
         
         button.layer.borderWidth = 1
         
@@ -35,7 +37,9 @@ class HeaderUIView: UIView {
         
         button.setTitle("Download", for: .normal)
         
-        button.layer.borderColor = UIColor.white.cgColor
+        button.layer.borderColor = UIColor.label.cgColor
+        
+        button.setTitleColor(UIColor.label, for: .normal)
         
         button.layer.borderWidth = 1
         
@@ -70,13 +74,7 @@ class HeaderUIView: UIView {
         addSubview(imageView)
         
         addGradient()
-        
-        addSubview(playButton)
-        
-        addSubview(downloadButton)
-        
-        applyConstraints()
-        
+                
     }
     
     override func layoutSubviews() {
@@ -97,29 +95,6 @@ class HeaderUIView: UIView {
         
     }
     
-    private func applyConstraints() {
-        
-        let playButtonConstraints = [
-        
-            playButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 90),
-            playButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
-            playButton.widthAnchor.constraint(equalToConstant: 100)
-        
-        ]
-        
-        let downloadButtonConstraints = [
-        
-            downloadButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -90),
-            downloadButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -50),
-            downloadButton.widthAnchor.constraint(equalToConstant: 100)
-        
-        ]
-        
-        NSLayoutConstraint.activate(playButtonConstraints)
-        NSLayoutConstraint.activate(downloadButtonConstraints)
-        
-    }
-    
     private func addGradient() {
         
         let gradientLayer = CAGradientLayer()
@@ -127,7 +102,7 @@ class HeaderUIView: UIView {
         gradientLayer.colors = [
         
             UIColor.clear.cgColor,
-            UIColor.systemBackground.cgColor
+            UIColor.black.cgColor
         
         ]
         

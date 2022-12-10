@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				67F42BB0293A20E100BF91A4 /* NetflixCloneModel.xcdatamodeld */,
-				6744F8882932971000159804 /* Nextflix-Clone-App */,
+				6744F8882932971000159804 /* Netflix */,
 				6744F8872932971000159804 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,7 +92,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6744F8882932971000159804 /* Nextflix-Clone-App */ = {
+		6744F8882932971000159804 /* Netflix */ = {
 			isa = PBXGroup;
 			children = (
 				6744F8AA29334CCF00159804 /* Managers */,
@@ -107,7 +107,7 @@
 				6744F8942932971100159804 /* LaunchScreen.storyboard */,
 				6744F8972932971100159804 /* Info.plist */,
 			);
-			path = "Nextflix-Clone-App";
+			path = Netflix;
 			sourceTree = "<group>";
 		};
 		6744F89D2932AD5B00159804 /* Controllers */ = {
@@ -225,7 +225,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 6744F8812932971000159804 /* Build configuration list for PBXProject "Nextflix-Clone-App" */;
+			buildConfigurationList = 6744F8812932971000159804 /* Build configuration list for PBXProject "Netflix" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -472,7 +472,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		6744F8812932971000159804 /* Build configuration list for PBXProject "Nextflix-Clone-App" */ = {
+		6744F8812932971000159804 /* Build configuration list for PBXProject "Netflix" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6744F8982932971100159804 /* Debug */,

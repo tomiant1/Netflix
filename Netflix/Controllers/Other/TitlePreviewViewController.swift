@@ -25,7 +25,7 @@ class TitlePreviewViewController: UIViewController {
        
         let label = UILabel()
         
-        label.text = "Shawshank Redemption"
+        label.text = ""
         
         label.translatesAutoresizingMaskIntoConstraints = false
         
@@ -39,7 +39,7 @@ class TitlePreviewViewController: UIViewController {
        
         let label = UILabel()
         
-        label.text = "The movie that will rock your boat"
+        label.text = ""
         
         label.font = .systemFont(ofSize: 18, weight: .regular)
         
@@ -50,26 +50,6 @@ class TitlePreviewViewController: UIViewController {
         return label
         
     }()
-    
-    private let downloadButton: UIButton = {
-        
-        let button = UIButton()
-        
-        button.backgroundColor = .red
-        
-        button.setTitle("Download", for: .normal)
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        button.setTitleColor(.white, for: .normal)
-        
-        button.layer.cornerRadius = 8
-        
-        button.layer.masksToBounds = true
-        
-        return button
-        
-    }()
 
     override func viewDidLoad() {
         
@@ -78,8 +58,7 @@ class TitlePreviewViewController: UIViewController {
         view.addSubview(titleLabel)
         view.addSubview(webView)
         view.addSubview(overviewLabel)
-        view.addSubview(downloadButton)
-        
+                
         view.backgroundColor = .systemBackground
         
         configureConstraints()
@@ -112,28 +91,17 @@ class TitlePreviewViewController: UIViewController {
         
         ]
         
-        let downloadButtonConstraints = [
-        
-            downloadButton.topAnchor.constraint(equalTo: overviewLabel.bottomAnchor, constant: 25),
-            downloadButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            downloadButton.widthAnchor.constraint(equalToConstant: 120),
-            downloadButton.heightAnchor.constraint(equalToConstant: 40)
-        
-        ]
-        
         NSLayoutConstraint.activate(webViewConstraints)
         
         NSLayoutConstraint.activate(titleLabelConstraints)
         
         NSLayoutConstraint.activate(overviewLabelConstraints)
         
-        NSLayoutConstraint.activate(downloadButtonConstraints)
-        
     }
     
     func configure(with model: TitlePreviewViewModel) {
         
-        titleLabel.text = model.title
+        titleLabel.text = model.titleName
         
         overviewLabel.text = model.titleOverview
         

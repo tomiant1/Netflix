@@ -88,7 +88,7 @@ extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
                     
                     let vc = TitlePreviewViewController()
                     
-                    let titlePreviewModel = TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? "")
+                    let titlePreviewModel = TitlePreviewViewModel(titleName: titleName, youtubeView: videoElement, titleOverview: title.overview ?? "")
                     
                     vc.configure(with: titlePreviewModel)
                     
@@ -103,6 +103,44 @@ extension UpcomingViewController: UITableViewDelegate, UITableViewDataSource {
             }
             
         }
+        
+    }
+    
+    private func downloadTitleAt(indexPath: IndexPath) {
+        
+        DataPersistenceManager.shared.downloadTitle(with: titles[indexPath.row]) { result in
+            
+            switch result {
+                
+            case .success():
+                
+                NotificationCenter.default.post(name: NSNotification.Name("Downloaded"), object: nil)
+                
+            case .failure(let error):
+                
+                print(error)
+                
+            }
+            
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, contextMenuConfigurationForRowAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [weak self] _ in
+            
+            let downloadAction = UIAction(title: "Download", image: nil, identifier: nil, discoverabilityTitle: nil, state: .off) { _ in
+                
+                self?.downloadTitleAt(indexPath: indexPath)
+                
+            }
+            
+            return UIMenu(title: "", image: nil, identifier: nil, options: .displayInline, children: [downloadAction])
+            
+        }
+        
+        return config
         
     }
     

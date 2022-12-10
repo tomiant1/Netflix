@@ -21,7 +21,7 @@ class TitleTableViewCell: UITableViewCell {
         
         button.translatesAutoresizingMaskIntoConstraints = false
         
-        button.tintColor = .white
+        button.tintColor = .label
         
         return button
         

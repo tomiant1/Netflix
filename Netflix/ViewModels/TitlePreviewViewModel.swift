@@ -9,10 +9,12 @@ import Foundation
 
 struct TitlePreviewViewModel {
     
-    let title: String
+    let titleName: String
     
     let youtubeView: VideoElement
     
     let titleOverview: String
     
 }
+
+// 

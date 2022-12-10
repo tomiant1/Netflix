@@ -178,7 +178,7 @@ extension DownloadsViewController: UITableViewDelegate, UITableViewDataSource {
                     
                     let vc = TitlePreviewViewController()
                     
-                    let titlePreviewModel = TitlePreviewViewModel(title: titleName, youtubeView: videoElement, titleOverview: title.overview ?? "")
+                    let titlePreviewModel = TitlePreviewViewModel(titleName: titleName, youtubeView: videoElement, titleOverview: title.overview ?? "")
                     
                     vc.configure(with: titlePreviewModel)
                     

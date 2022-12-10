@@ -101,7 +101,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         ]
         
-        navigationController?.navigationBar.tintColor = .white
+        navigationController?.navigationBar.tintColor = .label
         
     }
     
@@ -266,7 +266,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         header.textLabel?.frame = CGRect(x: header.bounds.origin.x + 20, y: header.bounds.origin.y, width: 100, height: header.bounds.height)
         
-        header.textLabel?.textColor = .white
+        header.textLabel?.textColor = .label
         
         header.textLabel?.text = header.textLabel?.text?.capitalized
         
